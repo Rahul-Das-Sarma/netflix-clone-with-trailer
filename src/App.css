@@ -1,0 +1,10 @@
+*{
+  margin: 0;
+}
+
+.App{
+  background-image:linear-gradient(to right,  rgb(17, 15, 15),  rgb(17, 15, 15));
+  min-height: 1000px;
+  height: 100%;
+  width: 100%;
+}

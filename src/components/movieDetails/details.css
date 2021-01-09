@@ -1,0 +1,120 @@
+.header__design{
+margin-top: 20px;
+}
+
+.new_banner{
+    color: white;
+    object-fit: contain;
+    height: 600px;
+    background-image: linear-gradient(to right,  rgb(17, 15, 15, .5),  rgb(17, 15, 15,.5));
+    background-position: right top;
+    width: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    opacity: 1;
+    animation: movefromright 0.7s forwards;   
+  }
+@keyframes movefromright {
+    from{right: -100%; opacity: 0}
+    to {right: 0; opacity: 1;}
+}
+
+.details-container-margin{
+    padding-top: 15vh;
+    display: flex;
+    justify-content: space-between;
+    overflow-y: hidden;
+}
+.container__heading,
+.container__para{
+    color: white;
+    margin: 30px;
+    position: relative;
+    animation: movefromleft .6s linear;
+}
+.youtube__trailer{
+    max-width: 640px;
+    width: 100%;
+    height: 360px;
+    position: absolute;
+    margin: 10% 20%;
+    transform: translateY(-100%);
+    opacity: 0;
+    z-index: 100;
+    transition: transform 0.3s linear;
+    transition-property: inherit;
+}
+
+.youtube__trailer__active{
+    transform: translateY(0);
+    opacity: 1;
+}
+@keyframes movefromleft{
+    from{ left : -100%; opacity: 0;}
+    to {left: 0; opacity: 1;}
+}
+
+.btn{
+    margin: 30px;
+    padding: 5px 20px;
+    background-color: transparent;
+    border-radius: 4px;    
+    color: #fff;
+    transition: background-color .2s ease-in;
+    animation: movefromleft .6s linear;
+    position: relative;
+}
+.Trailer__button{
+    border: 1px solid #fff; 
+}
+.watch__later{
+    border: 1px solid rgb(133, 6, 6);
+}
+
+.Trailer__button:hover{
+    color: black;
+    background-color: #fff;
+}
+
+.watch__later:hover{
+    background-color: rgb(133, 6, 6) ;
+}
+
+
+.container__para{
+    max-width: 200rem;
+    width: 100%;
+}
+.details-container{
+    padding: 35px;
+}
+
+@media only screen  and (max-width: 900px)
+{
+    .youtube__trailer{
+         margin: 10% 10%;
+    }
+}
+
+@media only screen  and (max-width: 750px) {
+    .youtube__trailer{
+        margin: 120% 0%;
+   }
+    .details-container-margin  {
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+    }
+    .details-container{
+        padding: 0px;
+        
+    }
+    .container__para{
+        width: 18rem
+    }
+    .new_banner{
+        max-width: 500px;
+        width: 100%;
+    }
+    
+}

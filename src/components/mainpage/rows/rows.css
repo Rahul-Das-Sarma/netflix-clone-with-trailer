@@ -1,0 +1,122 @@
+.row {
+  margin-top: 25px;
+  margin-left: 20px;
+  color: aliceblue;
+}
+.row__posters  {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 20px;
+  scroll-behavior: smooth;
+}
+.row__posters::-webkit-scrollbar {
+  display: none;
+}
+ .movie_image {
+  width: 250px;
+  margin-right: 10px;
+ object-fit: contain;
+  max-height: 150px;
+  transition: 450ms;
+  padding: 20px 0px;
+}
+
+.movie_image:hover {
+  transform: scale(1.08);
+  opacity: 1;
+}
+.movie_imageLarge {
+  max-height: 300px;
+}
+
+.movie_imageLarge:hover {
+  transform: scale(1.09);
+  opacity: 1;
+}
+
+.left__arrow {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 180px;
+  width: 50px;
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  cursor: default;
+}
+.left__arrow__large {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 330px;
+  width: 50px;
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  cursor: default;
+}
+.left__element__large {
+  font-size: 40px;
+  line-height: 330px;
+  vertical-align: middle;
+}
+
+.left__element {
+  font-size: 40px;
+  line-height: 180px;
+  vertical-align: middle;
+}
+
+.left__arrow:hover , .left__arrow__large:hover {
+  opacity: 1;
+}
+
+.right__arrow {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 180px;
+  width: 50px;
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  cursor: default;
+  text-align: center;
+}
+.right__arrow__large {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 330px;
+  width: 50px;
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  cursor: default;
+  text-align: center;
+}
+.right__element__large {
+  font-size: 40px;
+  line-height: 330px;
+  vertical-align: middle;
+}
+
+.right__element {
+  font-size: 40px;
+  line-height: 180px;
+  vertical-align: middle;
+}
+
+.right__arrow:hover , .right__arrow__large:hover {
+  opacity: 1;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .left__arrow,
+  .left__arrow__large {
+    display: none;
+  }
+}
