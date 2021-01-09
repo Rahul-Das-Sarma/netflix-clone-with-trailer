@@ -10,6 +10,7 @@ function MovieDetails(props) {
   const urlId = props.match.params.id;
   const onMovieDetails = props.onMovieDetails;
   const onMovieTrailer = props.onMovieTrailer;
+
   useEffect(() => {
     onMovieDetails(urlId);
     onMovieTrailer(urlId);
@@ -17,20 +18,27 @@ function MovieDetails(props) {
   }, [onMovieTrailer, onMovieDetails, urlId]);
 
   let drawModal = document.getElementById('ytplayer');
+  let drawName = 'youtube__trailer'
+const handleClick = (drawName) => {
 
-const handleClick = () => {
-// setShowModal(prevState => {
-//   return !prevState.showModal
-// })
-if (drawModal.className === 'youtube__trailer'){
+if (drawModal.className === drawName){
   drawModal.className += ' youtube__trailer__active'
  
 }else {
-  drawModal.className = 'youtube__trailer'
+  drawModal.className = drawName
   
 }
 
 }
+
+let workingUrl;
+
+if(props.showMovieTrailer.movieInfo?.results.length === 0) {
+   workingUrl = null
+}else {
+  workingUrl = props.showMovieTrailer.movieInfo?.results[0].key
+}
+
 
 
   return (
@@ -39,11 +47,11 @@ if (drawModal.className === 'youtube__trailer'){
         <h1>Loading....</h1>
       ) : (<>
                 <iframe
-                className= 'youtube__trailer'
+                className= {drawName} //'youtube__trailer'
                 title="youtube"
                 id="ytplayer"
                 type="text/html"
-                src={`https://www.youtube.com/embed/${ props.showMovieTrailer.movieInfo?.results[0].key }`}
+                src={`https://www.youtube.com/embed/${ workingUrl}`}
                 frameborder="0"
                 marginheight="0"
                 marginwidth="0"                
@@ -60,7 +68,7 @@ if (drawModal.className === 'youtube__trailer'){
                 {props.showMovieInfo.movieInfo?.overview}
               </p>
 
-              <button onClick={handleClick} className="btn Trailer__button">Watch Trailer</button>
+              <button onClick={() => handleClick(drawName)} className="btn Trailer__button">Watch Trailer</button>
               <button className="btn watch__later">Save Movie</button>
             </div>
             <div className="header__design">
