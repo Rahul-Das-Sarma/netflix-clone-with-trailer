@@ -17,15 +17,16 @@ function MovieDetails(props) {
     window.scrollTo(0, 0);
   }, [onMovieTrailer, onMovieDetails, urlId]);
 
-  let drawModal = document.getElementById('ytplayer');
-  let drawName = 'youtube__trailer'
-const handleClick = (drawName) => {
 
-if (drawModal.className === drawName){
+  
+const handleClick = () => {
+  let drawModal = document.getElementById('ytplayer');
+  
+if (drawModal.className === 'youtube__trailer'){
   drawModal.className += ' youtube__trailer__active'
  
 }else {
-  drawModal.className = drawName
+  drawModal.className = 'youtube__trailer'
   
 }
 
@@ -47,7 +48,7 @@ if(props.showMovieTrailer.movieInfo?.results.length === 0) {
         <h1>Loading....</h1>
       ) : (<>
                 <iframe
-                className= {drawName} //'youtube__trailer'
+                className= 'youtube__trailer' //'youtube__trailer'
                 title="youtube"
                 id="ytplayer"
                 type="text/html"
@@ -68,7 +69,7 @@ if(props.showMovieTrailer.movieInfo?.results.length === 0) {
                 {props.showMovieInfo.movieInfo?.overview}
               </p>
 
-              <button onClick={() => handleClick(drawName)} className="btn Trailer__button">Watch Trailer</button>
+              <button onClick={ handleClick} className="btn Trailer__button">Watch Trailer</button>
               <button className="btn watch__later">Save Movie</button>
             </div>
             <div className="header__design">

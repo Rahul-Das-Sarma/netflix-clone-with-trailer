@@ -4,6 +4,7 @@ import movieDetailsReducer from './reducers/moviedetailsReducer';
 import movieTrailerReducer from './reducers/movieTraileReducer';
 import thunk from 'redux-thunk'
 import tvReducer from './reducers/tvdetailsreducer';
+import tvTrailerReducer from './reducers/tvTrailerReducer'
 
 const logger = store => {
     return next => {
@@ -22,7 +23,8 @@ const rootReducer = combineReducers({
 movie: movieReducer,
 movieDetails: movieDetailsReducer,
 tvDetails: tvReducer,
-movieTrailer: movieTrailerReducer
+movieTrailer: movieTrailerReducer,
+tvTrailers: tvTrailerReducer
 })
 
 const composeEnhancers =  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

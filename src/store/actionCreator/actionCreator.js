@@ -10,4 +10,4 @@ export {
 } from "../actions/actions";
 
 
-export {MovieDetailsPage, TvShowDetails, MovieTrailerAction} from  '../actions/detailsaction';
+export {MovieDetailsPage, TvShowDetails, MovieTrailerAction, TvShowTrailers} from  '../actions/detailsaction';

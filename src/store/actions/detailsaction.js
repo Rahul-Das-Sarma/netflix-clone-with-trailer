@@ -38,3 +38,15 @@ export const TvShowDetails = (movieId) => async (dispatch) => {
     .catch(error => {dispatch({type:actionTypes.TV_DETAILS_ERROR, error:  error})})
  
  }
+
+ export const TvShowTrailers = (movieId) => async (dispatch) => {
+    dispatch({type: actionTypes.TV_TRAILER_LOADING})
+ 
+ 
+    await axios.get(`/tv/${movieId}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`)
+    .then(response => {
+        dispatch({type: actionTypes.TV_TRAILER, payload: response.data})
+    })
+    .catch(error => {dispatch({type:actionTypes.TV_TRAILER_ERROR, error:  error})})
+ 
+ }
