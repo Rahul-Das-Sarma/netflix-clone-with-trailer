@@ -1,0 +1,47 @@
+/* .Signup_container {
+background-color: blanchedalmond;
+position: fixed;
+} */
+
+.card{
+    min-height: 660px;
+    max-width: 450px;
+    margin: auto;
+    padding: 10% 5% ;
+    opacity: .8;
+    background-color: black;
+}
+.card_container{
+    color: #fff;
+    padding: 68px;
+}
+
+.card_container h1 {
+    margin-bottom: 30px;
+}
+.inp{
+    width: 100%;
+    padding: 13px 0;
+    font-size: 18px;
+    margin-bottom: 20px;
+    outline: none;
+}
+.btn-signup{
+      max-width: 100%;
+      width: 100%;
+      margin-top: 10px;
+      padding: 13px;
+      font-size: 18px;
+      color: #fff;
+  background-color: #e50914;
+   border: none;
+    outline: none;
+}
+
+
+
+@media only screen and (max-width: 640px) {
+    .card_container{
+        padding: 68px 0;
+    }
+}

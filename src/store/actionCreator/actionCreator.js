@@ -11,3 +11,6 @@ export {
 
 
 export {MovieDetailsPage, TvShowDetails, MovieTrailerAction, TvShowTrailers} from  '../actions/detailsaction';
+
+
+export {userSignUp, userLogin, userSignOut} from "../actions/useraction";

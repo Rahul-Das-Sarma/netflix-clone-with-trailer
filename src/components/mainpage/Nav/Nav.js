@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Nav.css";
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
 
-function Nav(){
+
+function Nav(props){
 
     const [show, handleShow] = useState(false);
 
@@ -16,6 +17,8 @@ function Nav(){
 //  return () => window.removeEventListener("scroll");
     }, []);
 
+
+
   return ( <div className={`img__nav ${show && "img__navBlack"}`}>
       <Link to='/'>
         <img className="image__logo"
@@ -23,7 +26,11 @@ function Nav(){
         alt="Netflix-Logo"
          />
          </Link>
+
+        
     </div>)
 }
+
+
 
 export default Nav;
