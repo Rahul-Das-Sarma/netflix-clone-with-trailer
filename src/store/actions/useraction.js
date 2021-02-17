@@ -14,12 +14,13 @@ export const userSignUp = (email, password) => async dispatch => {
      
 }
 
-export const userLogin = (email, password) => async dispatch => {
+export const userLogin = (email, password, callback) => async dispatch => {
     dispatch({type: actionTypes.USER_LOGIN_LOADING})
 
     try{
         await auth.signInWithEmailAndPassword(email, password).then(userCredentials => {
-            dispatch({type: actionTypes.USER_LOGIN_SUCCESS, payload: userCredentials.user})
+            dispatch({type: actionTypes.USER_LOGIN_SUCCESS, payload: "successfully logged in"});
+             callback();
         }) 
     }
     catch {

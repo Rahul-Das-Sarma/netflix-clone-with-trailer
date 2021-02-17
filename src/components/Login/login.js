@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, {  useRef } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { userLogin } from "../../store/actionCreator/actionCreator";
 import { connect } from "react-redux";
@@ -10,10 +10,12 @@ function Login(props) {
   const passwordRef = useRef("");
  
 
+
+
   function handleSubmit(e) {
     e.preventDefault();
-    props.signIn(emailRef.current.value, passwordRef.current.value);
-    history.push("/") 
+    props.signIn(emailRef.current.value, passwordRef.current.value, () => history.push("/") );
+    
     
   }
 
@@ -69,7 +71,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    signIn: (email, password) => dispatch(userLogin(email, password)),
+    signIn: (email, password, callback) => dispatch(userLogin(email, password, callback)),
   };
 };
 
